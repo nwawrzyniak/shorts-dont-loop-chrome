@@ -1,0 +1,7 @@
+material/
+tutorial/
+wiki/
+*.bat
+*.sh
+*.zip
+notes.txt

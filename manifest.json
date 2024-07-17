@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Shorts don't loop",
+  "description": "A Chrome extension that prevents YouTube Shorts from looping.",
+  "version": "1.0.0",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "graphics/nav_bar.png"
+  },
+  "icons": {
+    "16": "graphics/16.png",
+    "32": "graphics/32.png",
+    "48": "graphics/48.png",
+    "64": "graphics/64.png",
+    "128": "graphics/128.png",
+    "256": "graphics/256.png"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "content-scripts/sdl.js"
+      ],
+      "matches": [
+        "https://*.youtube.com/*"
+      ], 
+      "exclude_matches": [
+        "https://studio.youtube.com/*",
+        "https://*.youtube.com/embed*"
+      ]
+    }
+  ]
+}
