@@ -17,6 +17,11 @@ function popup() {
     chrome.storage.sync.set({ isActive: checkbox.checked }, function() {
       console.log("The value is set to " + checkbox.checked);
     });
+      if (checkbox.checked) {
+        chrome.action.setIcon({ path: "/graphics/nav_bar.png" });
+      } else {
+        chrome.action.setIcon({ path: "/graphics/nav_bar_inactive.png" });
+      }
   });
 }
 
