@@ -1,4 +1,4 @@
-function toggleIcon() {
+function updateIcon() {
   chrome.storage.sync.get(["isActive"], function (result) {
     if (result.isActive === undefined) {
       chrome.storage.sync.set({ isActive: true }, function () {
@@ -6,7 +6,6 @@ function toggleIcon() {
       });
     }
   });
-
 
   chrome.storage.sync.get(["isActive"], function (result) {
     if (result.isActive) {
@@ -17,4 +16,4 @@ function toggleIcon() {
   });
 }
 
-toggleIcon();
+updateIcon();
