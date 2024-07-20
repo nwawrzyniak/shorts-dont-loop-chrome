@@ -12,18 +12,21 @@ function preventLooping() {
   chrome.storage.sync.get(["isActive"], function (result) {
     if (result.isActive) {
       let checkVideoInterval = setInterval(function () {
-        const video = document.querySelector("#shorts-player > div.html5-video-container > video");
-        if (video != null) {
-          console.log("sdl: video found.");
-          clearInterval(checkVideoInterval);
-          let loopCheckInterval = setInterval(function () {
-            if (video.loop) {
-              video.loop = false;
-              console.log("sdl: video.loop set to false.");
-            }
-          }, 5);
-        } else {
-          console.log("sdl: video not found, retrying...");
+        const url = window.location.href;
+        if (url.includes("/shorts/")) {
+          const video = document.querySelector("#shorts-player > div.html5-video-container > video");
+          if (video != null) {
+            console.log("sdl: video found.");
+            clearInterval(checkVideoInterval);
+            let loopCheckInterval = setInterval(function () {
+              if (video.loop) {
+                video.loop = false;
+                console.log("sdl: video.loop set to false.");
+              }
+            }, 5);
+          } else {
+            console.log("sdl: video not found, retrying...");
+          }
         }
       }, 1000);
     }
