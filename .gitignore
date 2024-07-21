@@ -1,8 +1,11 @@
+content-scripts/
+graphics/
 material/
+popup/
 tutorial/
-wiki/
 *.bat
 *.sh
 *.zip
+manifest.json
 notes.txt
 temp_version
