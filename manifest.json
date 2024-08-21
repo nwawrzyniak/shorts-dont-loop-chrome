@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Shorts don't loop",
   "description": "A Google Chrome extension that prevents YouTube Shorts from looping.",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "permissions": [
     "storage"
   ],
@@ -42,7 +42,7 @@
       ]
     }
   ],
-  "homepage_url": "https://www.nwawsoft.com",
+  "homepage_url": "https://www.nwawsoft.com/shorts-dont-loop-chrome/",
   "author": {
     "email": "team@nwawsoft.com"
   }
